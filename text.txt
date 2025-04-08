@@ -1,0 +1,6 @@
+runserver       : fastapi dev main.py
+
+migration       : alembic revision --autogenerate -m "Initial migration"
+                : alembic upgrade head
+
+migration_Lib   : pip > freeze requirements.txt
