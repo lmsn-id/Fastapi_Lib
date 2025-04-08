@@ -4,8 +4,8 @@ from sqlalchemy.sql import func
 
 Base = declarative_base()
 
-
 class Test(Base):
     __tablename__ = "test"
     
     id = Column(String(20), primary_key=True)
+    fullname = Column(String(50))
