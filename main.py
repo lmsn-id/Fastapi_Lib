@@ -1,11 +1,8 @@
 from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
-from config.database import Base, engine
 from routes.auth import router as auth_router
 from config.middleware import check_api_key
 import uvicorn
-
-Base.metadata.create_all(bind=engine)
 
 app = FastAPI(dependencies=[Depends(check_api_key)])
 
